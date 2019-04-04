@@ -44,7 +44,8 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 if (direction == ItemTouchHelper.RIGHT) {
-                    adapter.addOrder("Send order")
+                    adapter.addOrder("New order")
+                    //adapter.sendOrder(viewHolder.adapterPosition)
                     Toast.makeText(viewHolder.itemView.context,"Sent", Toast.LENGTH_SHORT).show()
                 }
             }
@@ -52,7 +53,6 @@ class MainActivity : AppCompatActivity() {
 
         val orderTouchHelper = ItemTouchHelper(swipeHandler)
         orderTouchHelper.attachToRecyclerView(order_list)
-
     }
 
     /**
@@ -62,7 +62,7 @@ class MainActivity : AppCompatActivity() {
      */
     private fun getOrders() {
         orders.add("Order 1 ooooooooooooooooooooooooooooooooooooooooooo")
-        orders.add("Order 2")
+        orders.add("OXXM-2343567-18082019-1358")
         orders.add("Order 3")
         orders.add("Order 4")
         orders.add("Order 5")

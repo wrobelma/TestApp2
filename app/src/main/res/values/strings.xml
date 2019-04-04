@@ -1,4 +1,29 @@
 <resources>
     <string name="app_name">TestApp2</string>
     <string name="title_activity_order_details">OrderDetails</string>
+
+    <string name="order_date">Data zgłoszenia</string>
+    <string name="gps_location">Lokalizacja GPS</string>
+    <string name="order_type">Typ zgłoszenia</string>
+    <string name="location_name">Nazwa obiektu</string>
+    <string name="network_element">Rodzaj elementu sieci</string>
+    <string name="order_desc">Opis zgłoszenia</string>
+
+    <string name="attr_1">Atrybut 1</string>
+    <string name="attr_2">Atrybut 2</string>
+    <string name="attr_3">Atrybut 3</string>
+    <string name="attr_4">Atrybut 4</string>
+    <string name="attr_5">Atrybut 5</string>
+    <string name="attr_6">Atrybut 6</string>
+    <string name="attr_7">Atrybut 7</string>
+    <string name="attr_8">Atrybut 8</string>
+
+    <string name="photo_1">Zdjęcie 1</string>
+    <string name="photo_2">Zdjęcie 2</string>
+    <string name="photo_3">Zdjęcie 3</string>
+    <string name="photo_4">Zdjęcie 4</string>
+
+    <string name="tab_1">Zlecenie</string>
+    <string name="tab_2">Atrybuty</string>
+    <string name="tab_3">Załączniki</string>
 </resources>

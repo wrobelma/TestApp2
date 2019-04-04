@@ -1,10 +1,13 @@
 package com.example.testapp2
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
+import android.graphics.drawable.Drawable
+import android.graphics.drawable.Icon
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -12,6 +15,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.ContextCompat
+import androidx.core.content.ContextCompat.getColor
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
@@ -22,7 +26,6 @@ import kotlinx.android.synthetic.main.order_list_item.view.*
  *
  * @param orders lista zleceń dla której generowane będą widoki
  * @param mainActivity zapisanie kontekstu aktywności dla której generowane będą widoki
- *
  * @return adapter, referencja do listy utworzonych widoków
  */
 class OrderAdapter(val orders: ArrayList<String>, val mainActivity: MainActivity) : RecyclerView.Adapter<ViewHolder>() {
@@ -69,7 +72,6 @@ class OrderAdapter(val orders: ArrayList<String>, val mainActivity: MainActivity
  * Klasa definiuje logikę widoku zlecenia na liście zleceń
  *
  * @param view referencja do widoku wygenerowanego z definicji order_list_item
- *
  * @return widok z dopiętym listnerem do obsługi kliknięć
  */
 class ViewHolder (view: View) : RecyclerView.ViewHolder(view), View.OnClickListener {
@@ -110,8 +112,8 @@ class ViewHolder (view: View) : RecyclerView.ViewHolder(view), View.OnClickListe
  */
 abstract class SwipeSendDelete(context: Context) : ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT) {
 
-    private val deleteCol = Color.parseColor("#f43333")
-    private val sendCol = Color.parseColor("#33f433")
+    private val deleteCol = ContextCompat.getColor(context, R.color.swipeLeft)
+    private val sendCol = ContextCompat.getColor(context, R.color.swipeRight)
     private val deleteIcon = ContextCompat.getDrawable(context, R.drawable.ic_delete_black_24dp)
     private val sendIcon  = ContextCompat.getDrawable(context, R.drawable.ic_mail_outline_black_24dp)
     private val background = ColorDrawable()
@@ -125,6 +127,7 @@ abstract class SwipeSendDelete(context: Context) : ItemTouchHelper.SimpleCallbac
      *
      * Ustawia odpowiednie tło z ikoną i przeźroczystość widoku w zależności od kierunku swipe'a
      */
+    @SuppressLint("ResourceAsColor")
     override fun onChildDraw(
         c: Canvas,
         recyclerView: RecyclerView,
